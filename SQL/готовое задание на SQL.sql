@@ -6,7 +6,7 @@ DELETE FROM user WHERE skill < 100000;
 3. ¬ывести все данные из таблицы user в пор€дке убывани€ по полю skill 								
 SELECT * FROM user ORDER BY skill DESC								
 4. ƒобавить в таблицу user нового пользовател€ по имени Oleg, с уровнем 4 и skill =10								
-INSERT INTO user  VALUES (7, "Oleg", 4, 10)								
+INSERT INTO user  VALUES (7, 'Oleg', 4, 10)								
 5. ќбновить данные в таблице user -  дл€ пользователей с level_id меньше 2 проставить skill 2000000								
 UPDATE user SET skill = 2000000 WHERE level_id <2								
 6. ¬ыбрать user_name всех пользователей уровн€ admin использу€ подзапрос								
