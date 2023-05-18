@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "22385d51-0aee-4fdb-97a1-50c2a297dc99",
+		"name": "NASA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25794000",
+		"_collection_link": "https://bold-astronaut-215003.postman.co/workspace/TiNata~8253d51a-e60f-4985-8d78-3037de561417/collection/25794000-22385d51-0aee-4fdb-97a1-50c2a297dc99?action=share&creator=25794000&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Querying by Earth date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"var second_photo_id = jsonData.photos[1].id\r",
+							"pm.test(\"set variable\", function () {\r",
+							"    console.log('This is our jsonData',);\r",
+							"    pm.environment.set(\"2Photo_id\", second_photo_id) ;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "DEMO_KEY",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-1-21",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"mars-photos",
+						"api",
+						"v1",
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "2022-1-21"
+						},
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Photo2",
+			"value": "922929"
+		},
+		{
+			"key": "Photo2",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
